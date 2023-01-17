@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Abril';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("AbrilFatface-Regular.woff2") format("woff2"),
+    url("AbrilFatface-Regular.woff") format("woff");
+}
