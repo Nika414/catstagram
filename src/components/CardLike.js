@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
-import { baseUrl, unsplashJWT } from '../utils/utils';
+import { options, unsplashJWT } from '../utils/utils';
 
 export default function CardLike({ id, isLiked }) {
   const [isImgLiked, setIsImgLiked] = useState(isLiked);
   function handleLike() {
     if (!isImgLiked) {
-      fetch(`${baseUrl}photos/${id}/like`, {
+      fetch(`${options.baseUrl}photos/${id}/like`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${unsplashJWT}`,
@@ -17,7 +17,7 @@ export default function CardLike({ id, isLiked }) {
           setIsImgLiked(!isImgLiked);
         });
     } else {
-      fetch(`${baseUrl}photos/${id}/like`, {
+      fetch(`${options.baseUrl}photos/${id}/like`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${unsplashJWT}`,
