@@ -1,16 +1,20 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { getCards } from '../store/cardsSlice';
+import { getCards, cardsSetQuery } from '../store/cardsSlice';
 
 export default function SearchForm() {
   const dispatch = useDispatch();
   const [query, setQuery] = useState('');
+
   function handleQueryChange(e) {
     setQuery(e.target.value);
   }
+
   function handleSearch(e) {
     e.preventDefault();
-    dispatch(getCards(query));
+    // Данные поисковой строки необходимы для корректной загрузки следующих страниц
+    dispatch(cardsSetQuery(query));
+    dispatch(getCards({ query }));
   }
 
   return (

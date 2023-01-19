@@ -1,19 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { filterStatusChanged } from '../store/filterSlice';
 
-export default function FilterCheckbox({ onClick }) {
+export default function FilterCheckbox() {
+  const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
-
-  useEffect(() => {
-    if (checked) {
-      console.log('включен');
-      onClick();
-    } else {
-      console.log('выключен');
-    }
-  }, [checked]);
 
   function handleCheckBoxClick() {
     setChecked((prev) => !prev);
+    dispatch(filterStatusChanged());
   }
 
   return (

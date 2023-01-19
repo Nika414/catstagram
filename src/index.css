@@ -16,3 +16,4 @@ button {
 @import url(./components/Card/Card.css);
 @import url(./components/ShowMoreButton/ShowMoreButton.css);
 @import url(./components/Footer/Footer.css);
+@import url(./components/Preloader/Preloader.css);

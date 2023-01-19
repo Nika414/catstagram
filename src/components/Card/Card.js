@@ -1,19 +1,12 @@
-import { useState } from 'react';
 import CardLike from '../CardLike';
 import CardDeleteBttn from '../CardDeleteBttn';
 
 export default function Card({
   author, alt, url, description, id, liked, link,
 }) {
-  const [deleteImage, setDeleteImage] = useState(false);
-
-  function handleCardDelete() {
-    setDeleteImage(true);
-  }
-
   return (
-    <div className={`card ${deleteImage && 'card_delete'}`}>
-      <CardDeleteBttn id={id} onClick={handleCardDelete} />
+    <div className="card">
+      <CardDeleteBttn id={id} />
       <div style={{ backgroundImage: `url(${url})` }} className="card__img" src={url} alt={alt} />
       <div className="card__container">
         <a href={link} className="card__description" title="Open on unsplash">

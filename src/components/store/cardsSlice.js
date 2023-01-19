@@ -5,47 +5,111 @@ import { unsplashJWT, options } from '../../utils/utils';
 
 const api = new Api(options, unsplashJWT);
 
-// eslint-disable-next-line no-unused-vars
-export const getCards = createAsyncThunk('cards/getCards', async (query, { rejectWithValue, dispatch }) => {
-  try {
-    const result = await api.getCards(query);
-    dispatch(setInitialCards(result.results));
-  } catch (err) {
-    console.log(err);
-  } finally {
-    console.log('Got it!');
+export const getCards = createAsyncThunk('cards/getCards', async ({ query, loadNextPage }, { dispatch }) => {
+  if (loadNextPage) {
+    try {
+      dispatch(nextPageLoaderToggler(false));
+      const result = await api.getCards(query, loadNextPage);
+      dispatch(cardsSetAdditional(result.results));
+    } catch (err) {
+      console.log(err);
+    } finally {
+      dispatch(nextPageLoaderToggler(true));
+    }
+  } else {
+    try {
+      dispatch(cardsLoaderToggler(false));
+      const result = await api.getCards(query, loadNextPage);
+      dispatch(cardsSet(result.results));
+    } catch (err) {
+      console.log(err);
+    } finally {
+      dispatch(cardsLoaderToggler(true));
+    }
   }
 });
 
-// export const getMoreCards = createAsyncThunk('cards/getMoreCards', async (_, { rejectWithValue, dispatch }) => {
-//   try {
-//     const result = await fetch(`${baseUrl}search/photos?page=${options.page += 1}&query=cats&per_page=22&orientation=landscape`, {
-//       headers: {
-//         Authorization: `Bearer ${unsplashJWT}`,
-//       },
-//     }).then((res) => res.json());
-//     console.log(result);
-//     dispatch(setMoreCards(result.results));
-//   } catch (err) {
-//     console.log(err);
-//   } finally {
-//     console.log('Got it!');
-//   }
-// });
+export const setLikes = createAsyncThunk('cards/handleLikes', async ({ id, isLiked }, { dispatch }) => {
+  if (!isLiked) {
+    try {
+      dispatch(cardsLikeToggled(id));
+      await api.setLike(id);
+    } catch (err) {
+      console.log(err);
+      // Не изменять состояние лайка в случае ошибки
+      dispatch(cardsLikeToggled(id));
+    }
+  } else {
+    try {
+      dispatch(cardsLikeToggled(id));
+      await api.deleteLike(id);
+    } catch (err) {
+      console.log(err);
+      dispatch(cardsLikeToggled(id));
+    }
+  }
+});
 
 export const cardsSlice = createSlice({
   name: 'cards',
   initialState: {
     cards: [],
+    query: null,
+    loader: {
+      cardsLoader: null,
+      nextPageLoader: null,
+    },
   },
   reducers: {
-    setInitialCards(state, action) {
+    cardsSet(state, action) {
+      console.log(action.payload);
+      return {
+        ...state,
+        cards: action.payload,
+      };
+    },
+    cardsSetAdditional(state, action) {
       state.cards.push(...action.payload);
+    },
+    cardsLikeToggled(state, action) {
+      console.log(action.payload);
+      const card = state.cards.find((item) => item.id === action.payload);
+      card.liked_by_user = !card.liked_by_user;
+    },
+    cardsDelete(state, action) {
+      return {
+        ...state,
+        cards: state.cards.filter((card) => card.id !== action.payload),
+      };
+    },
+    cardsSetQuery(state, action) {
+      return {
+        ...state,
+        query: action.payload,
+      };
+    },
+    cardsLoaderToggler(state, action) {
+      return {
+        ...state,
+        loader: {
+          ...state.loader,
+          cardsLoader: action.payload,
+        },
+      };
+    },
+    nextPageLoaderToggler(state, action) {
+      return {
+        ...state,
+        loader: {
+          ...state.loader,
+          nextPageLoader: action.payload,
+        },
+      };
     },
   },
 });
 
 export const {
-  setInitialCards, setMoreCards,
+  cardsSet, cardsLikeToggled, cardsDelete, cardsSetAdditional, cardsSetQuery, cardsLoaderToggler, nextPageLoaderToggler,
 } = cardsSlice.actions;
 export default cardsSlice.reducer;
