@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a31af9df.css",
+    "main.js": "/static/js/main.915b6f7b.js",
+    "static/media/Inter-Bold.woff": "/static/media/Inter-Bold.93c1301bd9f486c573b3.woff",
+    "static/media/Inter-SemiBold.woff": "/static/media/Inter-SemiBold.cca62d21c8c555c392e5.woff",
+    "static/media/Inter-Medium.woff?v=3.19": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Regular.woff?v=3.19": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Bold.woff2": "/static/media/Inter-Bold.ec64ea577b0349e055ad.woff2",
+    "static/media/Inter-Medium.woff2?v=3.19": "/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-SemiBold.woff2": "/static/media/Inter-SemiBold.b5f0f109bc88052d4000.woff2",
+    "static/media/Inter-Regular.woff2?v=3.19": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/AbrilFatface-Regular.woff": "/static/media/AbrilFatface-Regular.5824efb2add3b8688013.woff",
+    "static/media/AbrilFatface-Regular.woff2": "/static/media/AbrilFatface-Regular.9008bec68dbdc839f854.woff2",
+    "static/media/Bin.svg": "/static/media/Bin.ce3b64935accf9b8212e.svg",
+    "index.html": "/index.html",
+    "static/media/tumb__COLOR_tumbler-off.svg": "/static/media/tumb__COLOR_tumbler-off.0f0c6417e0763d4da768.svg",
+    "main.a31af9df.css.map": "/static/css/main.a31af9df.css.map",
+    "main.915b6f7b.js.map": "/static/js/main.915b6f7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a31af9df.css",
+    "static/js/main.915b6f7b.js"
+  ]
+}
