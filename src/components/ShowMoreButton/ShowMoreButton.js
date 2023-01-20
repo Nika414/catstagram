@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getCards } from '../store/cardsSlice';
+import { getCards } from '../../store/cardsSlice';
 
 export default function ShowMoreButton() {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export default function ShowMoreButton() {
   return (
     <div className="show-more-button__container">
       <button onClick={handleMoreCards} type="button" className="show-more-button">
-        {isLoaded === false ? 'Loading...' : 'Show more' }
+        {isLoaded === false ? 'Loading...' : 'Show more'}
       </button>
     </div>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import { useSelector } from 'react-redux';
 import SearchForm from '../SearchForm/SearchForm';
 import CardsList from '../CardsList/CardsList';
@@ -17,13 +16,13 @@ export default function Main() {
     <main className="main">
       <SearchForm />
       <FilterCheckbox cards={cards} />
-      {isLoaded ? (
-        <>
-          <CardsList cards={cards} />
-          <ShowMoreButton />
-        </>
-      ) : (<Preloader />)}
-
+      {!isLoaded ? (<Preloader />)
+        : cards.length !== 0 ? (
+          <>
+            <CardsList cards={cards} />
+            <ShowMoreButton />
+          </>
+        ) : (<span className="main__span">Oops! There is nothing here..yet</span>)}
     </main>
   );
 }

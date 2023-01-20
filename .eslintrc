@@ -12,6 +12,8 @@
     "class-methods-use-this": "off",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
+    "no-nested-ternary": "off",
+    "no-use-before-define": "off",
     "linebreak-style": "off",
     "max-len": [
       "error",

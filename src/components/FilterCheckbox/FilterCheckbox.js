@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { filterStatusChanged } from '../store/filterSlice';
+import { filterStatusChanged } from '../../store/filterSlice';
 
 export default function FilterCheckbox() {
   const dispatch = useDispatch();

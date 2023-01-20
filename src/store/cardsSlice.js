@@ -1,9 +1,9 @@
-/* eslint-disable no-use-before-define */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import Api from '../../utils/api';
-import { unsplashJWT, options } from '../../utils/utils';
+import Api from '../utils/api';
+import { testJWT, options } from '../utils/utils';
 
-const api = new Api(options, unsplashJWT);
+const { REACT_APP_KEY } = process.env;
+const api = new Api(options, REACT_APP_KEY || testJWT);
 
 export const getCards = createAsyncThunk('cards/getCards', async ({ query, loadNextPage }, { dispatch }) => {
   if (loadNextPage) {
@@ -62,7 +62,6 @@ export const cardsSlice = createSlice({
   },
   reducers: {
     cardsSet(state, action) {
-      console.log(action.payload);
       return {
         ...state,
         cards: action.payload,
@@ -72,7 +71,6 @@ export const cardsSlice = createSlice({
       state.cards.push(...action.payload);
     },
     cardsLikeToggled(state, action) {
-      console.log(action.payload);
       const card = state.cards.find((item) => item.id === action.payload);
       card.liked_by_user = !card.liked_by_user;
     },

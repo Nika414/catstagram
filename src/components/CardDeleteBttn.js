@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { cardsDelete } from './store/cardsSlice';
+import { cardsDelete } from '../store/cardsSlice';
 
 export default function CardDeleteBttn({ id }) {
   const dispatch = useDispatch();

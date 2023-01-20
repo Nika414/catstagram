@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { setLikes } from './store/cardsSlice';
+import { setLikes } from '../store/cardsSlice';
 
 export default function CardLike({ id, isLiked }) {
   const dispatch = useDispatch();

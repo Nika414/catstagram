@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getCards } from '../store/cardsSlice';
+import { getCards } from '../../store/cardsSlice';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';

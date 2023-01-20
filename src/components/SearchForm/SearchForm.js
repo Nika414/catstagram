@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { getCards, cardsSetQuery } from '../store/cardsSlice';
+import { getCards, cardsSetQuery } from '../../store/cardsSlice';
 
 export default function SearchForm() {
   const dispatch = useDispatch();
