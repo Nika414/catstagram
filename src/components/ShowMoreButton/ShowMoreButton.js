@@ -11,8 +11,8 @@ export default function ShowMoreButton() {
   }
 
   return (
-    <div className="show-more-button__container">
-      <button onClick={handleMoreCards} type="button" className="show-more-button">
+    <div className="show-more-button">
+      <button onClick={handleMoreCards} type="button" className="show-more-button__button">
         {isLoaded === false ? 'Loading...' : 'Show more'}
       </button>
     </div>
