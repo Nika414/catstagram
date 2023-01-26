@@ -15,7 +15,7 @@ export default function Main() {
   return (
     <main className="main">
       <SearchForm />
-      <FilterCheckbox cards={cards} />
+      <FilterCheckbox />
       {!isLoaded ? (<Preloader />)
         : cards.length !== 0 ? (
           <>
