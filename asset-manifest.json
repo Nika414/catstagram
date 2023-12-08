@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/catstagram/static/css/main.99191e08.css",
-    "main.js": "/catstagram/static/js/main.10ea6d30.js",
+    "main.js": "/catstagram/static/js/main.a56e047e.js",
     "static/media/Inter-Bold.woff": "/catstagram/static/media/Inter-Bold.93c1301bd9f486c573b3.woff",
     "static/media/Inter-SemiBold.woff": "/catstagram/static/media/Inter-SemiBold.cca62d21c8c555c392e5.woff",
     "static/media/Inter-Medium.woff?v=3.19": "/catstagram/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
@@ -16,10 +16,10 @@
     "index.html": "/catstagram/index.html",
     "static/media/tumb__COLOR_tumbler-off.svg": "/catstagram/static/media/tumb__COLOR_tumbler-off.8e47be0f88ac917ae2b9.svg",
     "main.99191e08.css.map": "/catstagram/static/css/main.99191e08.css.map",
-    "main.10ea6d30.js.map": "/catstagram/static/js/main.10ea6d30.js.map"
+    "main.a56e047e.js.map": "/catstagram/static/js/main.a56e047e.js.map"
   },
   "entrypoints": [
     "static/css/main.99191e08.css",
-    "static/js/main.10ea6d30.js"
+    "static/js/main.a56e047e.js"
   ]
 }
