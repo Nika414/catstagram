@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/catstagram/static/css/main.f989301a.css",
-    "main.js": "/catstagram/static/js/main.cae5d44b.js",
+    "main.css": "/catstagram/static/css/main.99191e08.css",
+    "main.js": "/catstagram/static/js/main.10ea6d30.js",
     "static/media/Inter-Bold.woff": "/catstagram/static/media/Inter-Bold.93c1301bd9f486c573b3.woff",
     "static/media/Inter-SemiBold.woff": "/catstagram/static/media/Inter-SemiBold.cca62d21c8c555c392e5.woff",
     "static/media/Inter-Medium.woff?v=3.19": "/catstagram/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
@@ -14,12 +14,12 @@
     "static/media/AbrilFatface-Regular.woff2": "/catstagram/static/media/AbrilFatface-Regular.9008bec68dbdc839f854.woff2",
     "static/media/Bin.svg": "/catstagram/static/media/Bin.ce3b64935accf9b8212e.svg",
     "index.html": "/catstagram/index.html",
-    "static/media/tumb__COLOR_tumbler-off.svg": "/catstagram/static/media/tumb__COLOR_tumbler-off.0f0c6417e0763d4da768.svg",
-    "main.f989301a.css.map": "/catstagram/static/css/main.f989301a.css.map",
-    "main.cae5d44b.js.map": "/catstagram/static/js/main.cae5d44b.js.map"
+    "static/media/tumb__COLOR_tumbler-off.svg": "/catstagram/static/media/tumb__COLOR_tumbler-off.8e47be0f88ac917ae2b9.svg",
+    "main.99191e08.css.map": "/catstagram/static/css/main.99191e08.css.map",
+    "main.10ea6d30.js.map": "/catstagram/static/js/main.10ea6d30.js.map"
   },
   "entrypoints": [
-    "static/css/main.f989301a.css",
-    "static/js/main.cae5d44b.js"
+    "static/css/main.99191e08.css",
+    "static/js/main.10ea6d30.js"
   ]
 }
